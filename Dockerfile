@@ -12,8 +12,8 @@ EXPOSE 7002
 RUN for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
 
 RUN 
- apt-get update
- apt-get install ca-certificates curl gnupg
+ apt update
+ apt install ca-certificates curl gnupg
  install -m 0755 -d /etc/apt/keyrings
  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
  chmod a+r /etc/apt/keyrings/docker.gpg
@@ -25,9 +25,9 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
  apt-get update
 
-RUN  apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+RUN  apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-RUN  apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+RUN  apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 RUN wget -q https://raw.githubusercontent.com/dapr/cli/master/install/install.sh -O - | /bin/bash
 
