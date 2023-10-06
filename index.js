@@ -9,6 +9,6 @@ app.get("/notify", async (req, res) => {
   );
   res.send(`Notification send to ${data.name} through email :${data.email}`);
 });
-app.listen("4002", () => {
+app.listen("7002", () => {
   console.log("SERVER STARTED ");
 });
